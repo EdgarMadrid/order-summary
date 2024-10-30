@@ -1,0 +1,145 @@
+:root{
+    --primary-color-pale-blue: hsl(225, 100%, 94%);
+    --primary-color-bright-blue: hsl(245, 75%, 52%);
+    --color-very-pale-blue: hsl(225, 100%, 98%);
+    --color-desaturated-blue: hsl(224, 23%, 55%);
+    --color-dark-blue: hsl(223, 47%, 23%);
+    --white: #ffffff;
+    --lg: 18px;
+    --md: 14px;
+    --sm: 12px;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 1.6rem;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-very-pale-blue);
+    background-image: url(/images/pattern-background-mobile.svg);
+    background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-summary__card{
+    width: 320px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 2px var(--color-desaturated-blue);
+}
+.order-summary__img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+.order-summary__information{
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 0px 20px 20px;
+    padding: 24px;
+    text-align: center;
+}
+.order-summary__information--title{
+    margin-bottom: 12px;
+}
+.order-summary__information--description{
+    color: var(--color-desaturated-blue);
+    padding: 12px;
+    margin-bottom: 12px;
+}
+.order-summary__information-plans{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-very-pale-blue);
+    height: 80px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 18px;
+}
+
+.order-summary__information-plans--item{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+.order-summary__information-plans--item div:nth-child(2){
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    margin-left: 20px;
+}
+.order-summary__information-plans--item div span:nth-child(1){
+    font-weight: bold;
+    color: var(--color-dark-blue);
+}
+.order-summary__information-plans--item div span:nth-child(2){
+    color: var(--color-desaturated-blue);
+    font-size: var(--md);
+}
+.order-summary__information-plans a{
+    font-size: var(--md);
+    font-weight: bold;
+    cursor: pointer;
+}
+.order-summary__information-plans a:hover{
+    text-decoration: none;
+}
+.order-summary__information--button-payment{
+    background-color: var(--primary-color-bright-blue);
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: bold;
+    margin-bottom: 18px;
+    cursor: pointer;
+}
+.order-summary__information--button-payment:hover{
+    background-color: hsla(245, 75%, 52%,0.7);
+    cursor: pointer;
+}
+.order-summary__cancel-order{
+    font-weight: bold;
+    font-size: var(--md);
+    color: var(--color-desaturated-blue);
+    text-decoration: none;
+    cursor: pointer;
+}
+.order-summary__cancel-order:hover{
+    color: var(--color-dark-blue);
+    cursor: pointer;
+}
+
+@media (min-width: 375px) {
+    body{
+        background-image: url(/images/pattern-background-desktop.svg);
+    }
+    .order-summary__card{
+        width: 440px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+    }
+}
